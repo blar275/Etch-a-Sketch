@@ -1,5 +1,9 @@
+div {
+    background-color: lightgrey;
+}
+
 .container {
-    width: 70vw;
-    height: 70vw;
+    width: 70vh;
+    height: 70vh;
     display: grid;
 }

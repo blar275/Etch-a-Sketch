@@ -1,4 +1,5 @@
 const container = document.querySelector(".container")
+const slider = document.querySelector(".slider")
 const color = "black"
 
 function drawPanel(size) {
@@ -8,13 +9,16 @@ function drawPanel(size) {
     for (let i = 1; i <= size; i++) {
         for (let j = 1; j <= size; j++) {
             let child = document.createElement('div')
-            child.addEventListener('mouseover', (e) => e.target.style.backgroundColor = "black")
+            child.addEventListener('mouseover', (e) => e.target.style.backgroundColor = color)
             child.style.cssText = `grid-column: ${i};\n
                                     grid-row: ${j};`
-            console.log('done')
             container.appendChild(child)
         }
     }
 }
+
+slider.oninput = function() {
+    drawPanel(slider.value)
+} 
 
 drawPanel(16)
